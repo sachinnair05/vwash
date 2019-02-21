@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>Dashboard</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-inverse" style="background-color:blanchedalmond">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand">VWASH</a>
+          </div>
+          <ul class="nav navbar-nav">
+          </ul>
+          <a href="logout"><button class="btn btn-danger navbar-btn">Logout</button></a>
+        </div>
+      </nav>
+    <div class="container-fluid">
+        <div class="row">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th>id</th>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Area Code</th>
+                  <th>Phone Number</th>
+                  <th>Email</th>
+                  <th>Address Line1</th>
+                  <th>Address Line2</th>
+                  <th>City</th>
+                  <th>State</th>
+                  <th>Postal Code</th>
+                  <th>Country</th>
+                  <th>Pickup Date</th>
+                  <th>Pickup Time</th>
+                  <th>Services</th>
+                  <th>Special Instructions</th>
+                  <th>Booked At</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for booking in booking%}
+                <tr>
+                    <td>{{ booking.id}}</td>
+                    <td>{{ booking.first_name}}</td>
+                    <td>{{ booking.last_name}}</td>
+                    <td>{{ booking.are_code}}</td>
+                    <td>{{ booking.phone_number}}</td>
+                    <td>{{ booking.email_id}}</td>
+                    <td>{{ booking.address_line1}}</td>
+                    <td>{{ booking.address_line2}}</td>
+                    <td>{{ booking.city}}</td>
+                    <td>{{ booking.state}}</td>
+                    <td>{{ booking.postal_code}}</td>
+                    <td>{{ booking.country}}</td>
+                    <td>{{ booking.pickup_date}}</td>
+                    <td>{{ booking.pickup_time}}</td>
+                    <td>{% for service in services%}
+                        {% if booking.id == service.order_id_id%}
+                        {{service.service}},
+                        {%endif%}
+                        {% endfor %}
+                    </td>
+                    <td>{{ booking.special_instructions}}</td>
+                    <td>{{ booking.created_at}}</td>
+                </tr>
+                {% endfor%}
+              </tbody>
+            </table>
+          </div>
+        </div>
+  </body>
+  </html>

@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     url('^homepage/',include('homepage.urls')),
     url('^booknow/$', views.booknow,name="book"),
+    url('^adminpage/',include('adminpage.urls')),
 ]

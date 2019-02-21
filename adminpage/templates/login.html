@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Admin Login</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<style>
+			.loginForm{
+				margin-top: 30%;
+			}
+			.message{
+				color:red;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2 col-sm-4 col-md-4 col-lg-4"></div>
+				<div class="col-xs-10 col-sm-4 col-md-4 col-lg-4">
+					<h1 style="margin-top:40%">Admin Login</h1>
+					<div class="message">
+							{% if messages %}
+							   {% for message in messages %}
+								   <p><h3>{{ message }}</h3> 
+									   </p>
+							   {% endfor %}
+							 {% endif %}
+							 </div>
+					<form class="loginForm" method="post">
+						{%csrf_token%}
+						<div class="form-group">
+							<label>Email:</label>
+							<input class="form-control" type="email" name="email" required autofocus>
+						</div>
+						<div class="form-group">
+							<label>Password:</label>
+							<input class="form-control" type="password" name="password" required>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-success">Login</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-xs-2 col-sm-4 col-md-4 col-lg-4"></div>
+			</div>
+		</div>
+	</body>
+</html>

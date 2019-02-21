@@ -209,7 +209,8 @@ JotForm.paymentExtrasOnTheFly([null,{"description":"fill in your name","name":"f
 </script>
 </head>
 <body>
-<form class="jotform-form" action="https://submit.jotform.me/submit/90290974856470/" method="post" name="form_90290974856470" id="90290974856470" accept-charset="utf-8">
+<form class="jotform-form" method="post" name="form_90290974856470" id="90290974856470" accept-charset="utf-8">
+  {%csrf_token%}
   <input type="hidden" name="formID" value="90290974856470" />
   <div class="form-all">
     <ul class="form-section page-section">
@@ -693,9 +694,9 @@ JotForm.paymentExtrasOnTheFly([null,{"description":"fill in your name","name":"f
               <label id="label_input_12_5" for="input_12_5"> Dry Cleaning </label>
             </span>
             <span class="form-checkbox-item" style="clear:left">
-              <input type="checkbox" class="form-checkbox-other form-checkbox" name="q12_input12[other]" id="other_12" value="other" />
+              <input type="checkbox" class="form-checkbox-other form-checkbox" name="q12_input12[others]" id="other_12" value="other" />
               <label style="display:inline-block;text-indent:0" for="other_12">  </label>
-              <input type="text" class="form-checkbox-other-input form-textbox" name="q12_input12[other]" data-otherhint="Other service" placeholder="Other service" size="15" id="input_12" />
+              <input type="text" class="form-checkbox-other-input form-textbox" name="q12_input12[]" data-otherhint="Other service" placeholder="Other service" size="15" id="input_12" />
               <br/>
             </span>
           </div>
