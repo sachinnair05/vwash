@@ -7,7 +7,7 @@ class bookings(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30, null=True)
     area_code = models.IntegerField(null=True)
-    phone_number = models.IntegerField()
+    phone_number = models.BigIntegerField()
     email_id = models.EmailField(null=True)
     address_line1 = models.CharField(max_length=100)
     address_line2 = models.CharField(max_length=100,null=True)
